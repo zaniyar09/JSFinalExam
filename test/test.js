@@ -3,17 +3,18 @@ var chai = require('chai');
 let assert = chai.assert;
 let expect = chai.expect;
 
-function camelize (str) {
-  return str
-    .split('-') // my-long-word -> ['my', 'long', 'word']
-    .map(
-      (word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1)
-    ) // ['my', 'long', 'word'] -> ['my', 'Long', 'Word']
-    .join(''); // ['my', 'Long', 'Word'] -> myLongWord
+function AlphabetSoup (str) {
+  var arr = str.split('');
+  var sorted = arr.sort();
+  return sorted.join('');
 }
 
-describe('run cammelize', function () {
-  it('must string without dash', function () {
-    assert.equal(camelize('my-long-word'), 'myLongWord');
+let word = 'coderbyte';
+
+// let sortWord = AlphabetSoup(word);
+
+describe('run aplphabetSoup for coderbyte', function () {
+  it('must string equal to bcdeeorty', function () {
+    assert.equal(AlphabetSoup(word), 'bcdeeorty');
   });
 });
