@@ -17,4 +17,8 @@ describe('run aplphabetSoup for coderbyte', function () {
   it('must string equal to bcdeeorty', function () {
     assert.equal(AlphabetSoup(word), 'bcdeeorty');
   });
+
+  it('returns sorted version of I Love New York', () => {
+    assert.strictEqual(AlphabetSoup('ILoveNewYork'), 'eeIkLNoorvwY');
+  });
 });
